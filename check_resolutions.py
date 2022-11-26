@@ -1,12 +1,17 @@
 import sys
-from read_images import read_images
+import os
+import cv2
 
 
 def get_images_resolutions(path):
-    images = read_images(path)
+    file_names = os.listdir(path)
     resolution_list = []
-    for image in images:
-        resolution_list.append(image.shape)
+    for file_name in file_names:
+        input_path = os.path.join(path, file_name)
+        img = cv2.imread(input_path)
+        if img is not None:
+            print("resolution of image: ", file_name, " is: ", img.shape)
+            resolution_list.append(img.shape)
     return resolution_list
 
 
