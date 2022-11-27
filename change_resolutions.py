@@ -8,9 +8,13 @@ def change_resolution(image, width, height):
     return cv2.resize(image, (width, height))
 
 
-def save_images_with_new_resolution(images, new_path, width, height, name):
+def save_images_with_new_resolution(current_path, new_path, width, height, name):
     create_directory_if_not_exists(new_path)
-    for i, image in enumerate(images):
+
+    file_names = os.listdir(current_path)
+    for i, file_name in enumerate(file_names):
+        input_path = os.path.join(current_path, file_name)
+        image = cv2.imread(input_path)
         image_path = new_path + "/" + name + "_" + str(i) + "_(" + str(width) + "x" + str(height) + ")" + '.jpg'
         print("saving image: ", image_path)
         new_image = change_resolution(image, width, height)
@@ -28,5 +32,4 @@ if __name__ == '__main__':
     image_width = int(sys.argv[3])
     image_height = int(sys.argv[4])
     name = sys.argv[5]
-    original_images = read_images(current_path)
-    save_images_with_new_resolution(original_images, new_path, image_width, image_height, name)
+    save_images_with_new_resolution(current_path, new_path, image_width, image_height, name)
