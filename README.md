@@ -32,7 +32,7 @@ python3 check_resolutions.py <folder_path>
 
 ### Example execution
 ```bash
-python check_resolutions.py /path/to/images_folder
+python3 check_resolutions.py /path/to/images_folder
 ```
 
 This command will print the resolutions of each image in the specified folder and indicate whether all images have the same resolution.
@@ -71,7 +71,7 @@ python3 change_resolutions.py <source_folder_path> <destination_folder_path> <im
 ### Example execution
 
 ```bash
-python change_resolutions.py /path/to/original_images /path/to/destination_images 800 600 resized
+python3 change_resolutions.py /path/to/original_images /path/to/destination_images 800 600 resized
 ```
 
 This command will resize images from the "original_images" folder to a resolution of 800x600 and save them in the "destination_images" folder with names like "resized_0_(800x600).jpg".
@@ -105,7 +105,7 @@ python3 create_dataset_from_folders.py <source_folder_path> <destination_folder_
 ### Example execution
 
 ```bash
-python create_dataset_from_folders.py /path/to/source_folder /path/to/destination_folder
+python3 create_dataset_from_folders.py /path/to/source_folder /path/to/destination_folder
 ```
 
 
@@ -141,7 +141,7 @@ python3 sample_and_copy.py <source_folder_path> <destination_folder_path> <sampl
 ### Example execution
 
 ```bash
-python sample_and_copy.py /path/to/source_folder /path/to/destination_folder 5 1
+python3 sample_and_copy.py /path/to/source_folder /path/to/destination_folder 5 1
 ```
 
 This command will sample 5 images from the "source_folder", rename them, and move them to the "destination_folder".
@@ -179,7 +179,7 @@ python3 sample_and_copy_from_subfolders.py <source_folder_path> <destination_fol
 ### Example execution
 
 ```bash
-python sample_and_copy_from_subfolders.py /path/to/source_folder /path/to/destination_folder 5 2 1
+python3 sample_and_copy_from_subfolders.py /path/to/source_folder /path/to/destination_folder 5 2 1
 ```
 
 This command will sample 5 images from each subfolder, with a jump of 2 between sampled images, and rename the sampled files in the "destination_folder".
@@ -209,7 +209,7 @@ python3 rename_images.py <folder_path> <new_basename>
 ### Example execution
 
 ```bash
-python rename_images.py /path/to/image_folder new_name
+python3 rename_images.py /path/to/image_folder new_name
 ```
 
 This command will rename all images in the "image_folder" by appending an index to the specified new_name.
